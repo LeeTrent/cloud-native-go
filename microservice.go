@@ -22,7 +22,7 @@ func main() {
 	// 1. Retrieve an individual book by ISBN (GET)
 	// 2. Update a book by ISBN (PUT)
 	// 3. Delete a book by ISBN (DELETE)
-	http.HandleFunc("/api/books/", api.BooksHandleFunc)
+	http.HandleFunc("/api/books/", api.BookHandleFunc)
 	////////////////////////////////////////////////////
 
 	http.ListenAndServe(port(), nil)
