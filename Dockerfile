@@ -1,11 +1,7 @@
 FROM golang:1.7.4-alpine
-
-ENV GOPATH /Users/leetrent/Development/Software/go/workspace
-ENV SOURCES /Users/leetrent/Development/Software/go/workspace/src/github.com/LeeTrent/cloud-native-go/
-
+ENV SOURCES /go/src/github.com/LeeTrent/cloud-native-go/
 COPY . ${SOURCES}
-
 RUN cd ${SOURCES} && CGO_ENABLED=0 go install -a
-
+ENV PORT 8080
+EXPOSE 8080 
 ENTRYPOINT cloud-native-go
-EXPOSE 8080
